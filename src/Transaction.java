@@ -1,43 +1,22 @@
+import java.util.Date;
+
 public class Transaction {
-    private String transactionType;
-    private int id;
-    private int amount;
-    private String date;
-    private String sourceId;
-    private String destinationId;
+    String type;
+    double amount;
+    Date date;
+    int sourceWalletId;
+    int targetWalletId;
 
-    public Transaction(String transactionType, int id, int amount, String date, String sourceId, String destinationId) {
-        this.transactionType = transactionType;
-        this.id = id;
+    public Transaction(String type, double amount, int sourceWalletId, int targetWalletId) {
+        this.type = type;
         this.amount = amount;
-        this.date = date;
-        this.sourceId = sourceId;
-        this.destinationId = destinationId;
+        this.date = new Date();
+        this.sourceWalletId = sourceWalletId;
+        this.targetWalletId = targetWalletId;
     }
 
-    public String getTransactionType() {
-        return transactionType;
+    public String toString() {
+        return "Transaction: " + type + ", Amount: " + amount + ", Date: " + date +
+                ", Source Wallet: " + sourceWalletId + ", Target Wallet: " + targetWalletId;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public String getSourceId() {
-        return sourceId;
-    }
-
-    public String getDestinationId() {
-        return destinationId;
-    }
-
-
 }
