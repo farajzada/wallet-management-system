@@ -23,6 +23,7 @@ public class WalletManagementApp {
         wallet1.withdraw(500);
         transfer(wallet1, wallet2, 600);
 
+
         System.out.println("\nTransaction Log:");
         for (Transaction t : transactionLog) {
             System.out.println(t);
